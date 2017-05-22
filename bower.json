@@ -1,0 +1,22 @@
+{
+  "name": "theme_dev",
+  "authors": [
+    "tawshif <anikphp@gmail.com>"
+  ],
+  "description": "wp theme development",
+  "main": "index.php",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/vendors",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "v4.0.0-alpha.6"
+  }
+}

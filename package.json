@@ -1,0 +1,22 @@
+{
+  "name": "theme_dev",
+  "version": "1.0.0",
+  "description": "this is to develop wordpress theme",
+  "main": "index.php",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.0",
+    "run-sequence": "^1.2.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "tawshif",
+  "license": "ISC"
+}
