@@ -36,6 +36,7 @@ function dev_sidebar_options(){
 }
 function dev_sidebar_name(){
 	$firstName = esc_attr( get_option( 'first_name'));
+	$lastName = esc_attr( get_option( 'last_name'));
 	echo '<input type="text" name="first_name" value="" placeholder="First Name">';	
 }
 
