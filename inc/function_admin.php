@@ -26,6 +26,7 @@ function dev_add_admin_page(){
 add_action( 'admin_menu', 'dev_add_admin_page' );
 
 function dev_custom_settings(){
+	register_setting( 'dev-settings-group', 'profile_picture' );
 	register_setting( 'dev-settings-group', 'first_name' );
 	register_setting( 'dev-settings-group', 'last_name' );
 	register_setting( 'dev-settings-group', 'user-description' );
@@ -35,8 +36,9 @@ function dev_custom_settings(){
 
 	add_settings_section( 'dev-sidebar-options', 'Sidebar Options', 'dev_sidebar_options', 'dev_admin' );
 	
+	add_settings_field( 'sidebar-profile-picture', 'Profile Picture', 'dev_sidebar_prifile', 'dev_admin', 'dev-sidebar-options' );
 	add_settings_field( 'sidebar-name', 'First Name', 'dev_sidebar_name', 'dev_admin', 'dev-sidebar-options');
-	add_settings_field( 'sidebar-description', 'First Name', 'dev_sidebar_description', 'dev_admin', 'dev-sidebar-options');
+	add_settings_field( 'sidebar-description', 'Description', 'dev_sidebar_description', 'dev_admin', 'dev-sidebar-options');
 	add_settings_field( 'sidebar-twitter', 'Twitter Handeler', 'dev_sidebar_twitter', 'dev_admin', 'dev-sidebar-options');
 	add_settings_field( 'sidebar-facebook', 'Facebook handler', 'dev_sidebar_facebook', 'dev_admin', 'dev-sidebar-options');
 	add_settings_field( 'sidebar-gplus', 'Google Plus handler', 'dev_sidebar_gplus', 'dev_admin', 'dev-sidebar-options');
@@ -46,14 +48,21 @@ function dev_sidebar_options(){
 	echo "Customize your sidebar options";
 }
 
+
+function dev_sidebar_prifile(){
+	$picture = esc_attr(get_option('profile_picture'));
+	echo '<input type="button" name="" value="Upload Profile Picture" id="upload-button" class="button button-uploader"><input type="hidden" name="profile_picture" value="'.$picture.'"/>';
+}
+
 function dev_sidebar_name(){
 	$firstName = esc_attr( get_option( 'first_name'));
 	$lastName = esc_attr( get_option( 'last_name'));
-	echo '<input type="text" name="first_name" value="'.$firstName.'" placeholder="First Name"> <input type="text" name="last_name" value="'.$lastName.'" placeholder="last Name">';	
+	echo '<input type="text" name="first_name" value="'.$firstName.'" placeholder="First Name"> <input type="text" name="last_name" value="'.$lastName.'" placeholder="last Name" />';	
 }
 function dev_sidebar_description() {
 	$description = esc_attr( get_option( 'user-description' ) );
-	echo '<input type="text" name="user-description" value="'.$description.'" placeholder="Description" /><p class="description">Write something about you</p>';
+	echo '<textarea  name="user-description" value="'.$description.'" ></textarea>
+	<p class="description">Write something about you</p>';
 }
 function dev_sidebar_twitter(){
 	$twitterHandler = esc_attr( get_option( 'twitter_handler'));
