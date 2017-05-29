@@ -10,7 +10,7 @@
 
 function dev_load_admin_scripts( $hook ){
 
-	if ('toplevel_page_dev_admin' != $hook) {return;}
+	// if ('toplevel_page_dev_admin' != $hook) {return;}
 
 	wp_register_style( 'dev_admin', get_template_directory_uri() .'/assets/css/admin.css', array(), '1.0.0', 'all' );
 	wp_enqueue_style( 'dev_admin' );
