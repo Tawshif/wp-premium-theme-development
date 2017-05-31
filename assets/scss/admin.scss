@@ -1,11 +1,18 @@
-.form-table{
-	input{
-		border-radius: 5px;
-	}
+.form-table {
+    input {
+        border-radius: 5px;
+    }
 }
-.wp-menu-image  img{
-	max-height: 20px; 
+
+.wp-menu-image img {
+    max-height: 20px;
 }
-.sidebar-preview{
-	
+
+.profile-picture {
+    width: 60px;
+    height: 60px;
+    display: block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }

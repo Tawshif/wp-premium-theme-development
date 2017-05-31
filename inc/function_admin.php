@@ -51,7 +51,7 @@ function dev_sidebar_options(){
 
 function dev_sidebar_prifile(){
 	$picture = esc_attr(get_option('profile_picture'));
-	echo '<input type="button" name="" value="Upload Profile Picture" id="upload-button" class="button button-uploader"><input type="hidden" name="profile_picture" value="'.$picture.'"/>';
+	echo '<input type="button" name="" value="Upload Profile Picture" id="upload-button" class="button button-uploader"><input type="hidden" name="profile_picture" value="'.$picture.'" id="profile-picture" />';
 }
 
 function dev_sidebar_name(){
